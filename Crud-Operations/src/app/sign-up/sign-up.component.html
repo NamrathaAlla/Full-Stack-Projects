@@ -1,0 +1,103 @@
+<div class="font">
+    <form [formGroup]="signup">
+            <h5 class=" head"><b><i>SIGN-UP FORM</i></b></h5>
+            <p-card class="task"
+                [style]="{'width': '30rem', 'margin-bottom': '510m','background-color':'rgb(220, 220, 220)' }">
+
+                <div>
+                    <!-- NAME -->
+                    <div class="p-label">
+                        <label for="inputtext"><b>Name</b> </label><br>
+                        <input type="text" id="inputtext" pInputText [(ngModel)]="name" formControlName="name"
+                            placeholder="enter your name"><br><br>
+
+                        <!-- validations -->
+                        <div *ngIf="signup.controls.name.errors?.required && signup.controls.name.touched"
+                            style="color:red">
+                            Field
+                            must be required</div>
+                    </div>
+
+                    <!-- NAME -->
+                    <div class="p-label">
+                        <label for="inputtext"> <b>Username</b></label><br>
+                        <input type="text" id="inputtext" pInputText [(ngModel)]="usrnm" formControlName="user"
+                            placeholder="enter your password"><br><br>
+
+                        <div *ngIf="signup.controls.user.errors?.required && signup.controls.user.touched"
+                            style="color:red">Field
+                            must be required</div>
+                    </div>
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="p-label">
+                    <label for="inputtext"> <b>Password</b></label><br>
+                    <input type="password" id="inputtext" pInputText [(ngModel)]="passwd" formControlName="pwd"
+                        placeholder="enter your password"><br><br>
+
+                    <div *ngIf="signup.controls.pwd.errors?.required && signup.controls.pwd.touched" style="color:red">
+                        Field
+                        must be required</div>
+                </div>
+                <!-- age -->
+                <div class="p-label">
+                    <label for="inputtext"><b>Age</b> </label><br>
+                    <input type="text" id="inputtext" pInputText [(ngModel)]="uage" formControlName="age"
+                        placeholder="enter your username"><br><br>
+
+                    <!-- validations -->
+                    <div *ngIf="signup.controls.age.errors?.required && signup.controls.age.touched" style="color:red">
+                        Field must be required</div>
+
+
+
+                    <!-- gender -->
+                    <div class="p-label">
+                        <label for="inputtext"><b>Gender</b> </label><br>
+                        <input type="text" id="inputtext" pInputText [(ngModel)]="ugender" formControlName="gender"
+                            placeholder="enter your username"><br><br>
+
+                        <!-- validations -->
+                        <div *ngIf="signup.controls.gender.errors?.required && signup.controls.gender.touched"
+                            style="color:red">
+                            Field must be required</div>
+
+                    </div>
+
+                    <!-- email -->
+                    <div class="p-label">
+                        <label for="inputtext"><b>Email</b> </label><br>
+                        <input type="text" id="inputtext" pInputText [(ngModel)]="umail" formControlName="email"
+                            placeholder="enter your username"><br><br>
+
+                        <!-- validations -->
+                        <div *ngIf="signup.controls.email.errors?.required && signup.controls.email.touched"
+                            style="color:red">
+                            Field must be required</div>
+
+                    </div>
+                    <!-- city -->
+                    <div class="p-label">
+                        <label for="inputtext"><b>City</b> </label><br>
+                        <input type="text" id="inputtext" pInputText [(ngModel)]="ucity" formControlName="city"
+                            placeholder="enter your username"><br><br>
+
+                        <!-- validations -->
+                        <div *ngIf="signup.controls.city.errors?.required && signup.controls.city.touched"
+                            style="color:red">
+                            Field must be required</div>
+                        <p-button label="Submit"
+                            [disabled]="!name || !usrnm || !passwd || !uage || !ugender || !umail || ucity "></p-button>
+                        &nbsp;
+                        <p-button label="Reset" type="reset"
+                            [disabled]="!name || !usrnm || !passwd || !uage || !ugender || !umail || ucity ">
+                        </p-button>
+                    </div>
+
+
+
+                </div>
+            </p-card>
+    </form>
+</div>
